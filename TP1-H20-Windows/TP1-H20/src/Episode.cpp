@@ -34,7 +34,7 @@ bool Episode::operator==(unsigned int numEpisode)
 std::ostream& operator<<(std::ostream& os, const Episode& episode)
 {
     // To do
-    os << episode.nom_ << ": Episode:" << episode.numEpisode_
+    os << "Episode " << episode.numEpisode_ << ": " << episode.nom_
            << " | Duree: " << episode.duree_;
 
     return os;
@@ -44,7 +44,7 @@ std::ostream& operator<<(std::ostream& os, const Episode& episode)
 std::istream& operator>>(std::istream& is, Episode& episode)
 {
     // To do
-    is >> episode.nom_ >> episode.duree_ >> episode.numEpisode_;
+    is >> episode.numEpisode_ >> std::quoted(episode.nom_) >> std::quoted(episode.duree_);
     return is;
 }
 
