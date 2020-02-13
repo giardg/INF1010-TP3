@@ -1,0 +1,4 @@
+"George Lucas" 1944
+"John Ronald Reuel Tolkien" 1892
+"David Benioff" 1970
+"Paul Scheuring" 1968
