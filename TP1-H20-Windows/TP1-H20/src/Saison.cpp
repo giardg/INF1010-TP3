@@ -1,14 +1,19 @@
 // To do
+#include "Saison.h"
 
 // To do
-Saison::Saison()
+Saison::Saison():
     // To do
+    numSaison_(0), 
+    nbEpisodesmax_(0)
 {
 }
 
 // To do
-Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax)
+Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax):
     // To do
+    numSaison_(numSaison), 
+    nbEpisodesmax_(nbEpisodemax)
 {
 }
 
@@ -16,6 +21,12 @@ Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax)
 Saison::Saison(const Saison& saison)
 {
     // To do
+    for (unsigned int i = 0; i < saison.episodes_.size(); i++)
+    {
+        episodes_.push_back(std::make_unique<Episode>(*saison.episodes_[i]));
+    }
+    numSaison_ = saison.numSaison_;
+    nbEpisodesmax_ = saison.nbEpisodesmax_;
 }
 
 // To do

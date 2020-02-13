@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 // To do
+#include "Episode.h"
 
 class Saison
 {
