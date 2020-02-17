@@ -176,15 +176,18 @@ std::istream& Media::lire(std::istream& is)
     // To do
     int genreValeurEnum;
     int paysValeurEnum;
-    int mediaValeurEnum;
-    std::string nomAuteur;
+    //int mediaValeurEnum;
+    //std::string nomAuteur;
 
-    is >> mediaValeurEnum >> std::quoted(nomAuteur) >> std::quoted(nom_) >> anneeDeSortie_ >>
-        genreValeurEnum >> paysValeurEnum >> estRestreintParAge_;
+    //is >> mediaValeurEnum >> std::quoted(nomAuteur) >> std::quoted(nom_) >> anneeDeSortie_ >>
+    //    genreValeurEnum >> paysValeurEnum >> estRestreintParAge_;
+    is >> std::quoted(nom_) >> anneeDeSortie_ >>
+            genreValeurEnum >> paysValeurEnum >> estRestreintParAge_;
     //*auteur_ = Auteur(nomAuteur, ,); //JE NE SAIS PAS COMMENT SAVOIR L'ANNEE DE NAISSANCE DE AUTEUR
+    *auteur_ = Auteur();
     genre_ = to_enum<Media::Genre>(genreValeurEnum);
     pays_ = to_enum<Pays>(paysValeurEnum);
-    typeMedia_ = to_enum<Media::TypeMedia>(mediaValeurEnum);
+    //typeMedia_ = to_enum<Media::TypeMedia>(mediaValeurEnum);
     return is;
 }
 
