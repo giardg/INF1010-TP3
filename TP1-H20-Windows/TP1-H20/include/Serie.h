@@ -2,6 +2,9 @@
 #define Serie_1_H
 
 #include <iomanip>
+#include "Media.h"
+#include "GestionnaireSaisons.h"
+#include "Auteur.h"
 // To do
 
 class Serie
