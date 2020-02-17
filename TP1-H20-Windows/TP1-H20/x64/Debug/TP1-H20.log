@@ -1,8 +1,6 @@
 ﻿  Auteur.cpp
   Episode.cpp
   Film.cpp
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Film.cpp(22,44): warning C4100: 'os': unreferenced formal parameter
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Film.cpp(28,40): warning C4100: 'is': unreferenced formal parameter
   GestionnaireAuteurs.cpp
   GestionnaireSaisons.cpp
 C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Saison.h(12,54): warning C4245: 'initializing': conversion from 'int' to 'const size_t', signed/unsigned mismatch
