@@ -4,6 +4,8 @@
 // To do
 Film::Film(Auteur* auteur)
 // To do
+    : Media(auteur, TypeMedia::Film)
+    , duree_("")
 {
 }
 
@@ -11,6 +13,8 @@ Film::Film(Auteur* auteur)
 Film::Film(const std::string& nom, unsigned int anneeDeSortie, Genre genre, Pays pays,
            bool estRestreintParAge, Auteur* auteur, const std::string& duree)
     // To do
+    : Media(nom, anneeDeSortie, genre, pays, estRestreintParAge, auteur, TypeMedia::Film)
+    , duree_(duree)
 {
 }
 

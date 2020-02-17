@@ -1,56 +1,17 @@
 ﻿  Auteur.cpp
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Auteur.cpp(68,52): warning C4100: 'auteur': unreferenced formal parameter
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Auteur.cpp(68,40): warning C4100: 'is': unreferenced formal parameter
   Episode.cpp
   Film.cpp
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Film.cpp(7,1): error C2512: 'Media': no appropriate default constructor available
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Media.h(10,7): message : see declaration of 'Media'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Film.cpp(14,1): error C2512: 'Media': no appropriate default constructor available
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Media.h(10,7): message : see declaration of 'Media'
+C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Film.cpp(22,44): warning C4100: 'os': unreferenced formal parameter
+C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\Film.cpp(28,40): warning C4100: 'is': unreferenced formal parameter
   GestionnaireAuteurs.cpp
   GestionnaireSaisons.cpp
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(4,42): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(4,42): error C2523: '<Unknown>::~GestionnaireSaisons': destructor tag mismatch
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(5,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(7,1): warning C4508: 'GestionnaireSaisons': function should return a value; 'void' return type assumed
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,20): error C2143: syntax error: missing ';' before '&'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,1): error C2365: 'GestionnaireSaisons': redefinition; previous definition was 'function'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(4): message : see declaration of 'GestionnaireSaisons'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,53): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,59): error C2039: 'unique_ptr': is not a member of 'std'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\predefined C++ types (compiler internal)(368): message : see declaration of 'std'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,69): error C2065: 'unique_ptr': undeclared identifier
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,70): error C2065: 'Saison': undeclared identifier
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,78): error C2065: 'saison': undeclared identifier
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(10,84): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(11,1): error C2448: '+=': function-style initializer appears to be a function definition
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(16,20): error C2143: syntax error: missing ';' before '&'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(16,20): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(16,1): error C2365: 'GestionnaireSaisons': redefinition; previous definition was 'function'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(4): message : see declaration of 'GestionnaireSaisons'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(16,53): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(17,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(17,1): error C2059: syntax error: '{'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(17,1): error C2143: syntax error: missing ';' before '{'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(17,1): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(22,41): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(23,47): error C2039: 'unique_ptr': is not a member of 'std'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\predefined C++ types (compiler internal)(368): message : see declaration of 'std'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(23,57): error C2061: syntax error: identifier 'unique_ptr'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(29,41): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(36,47): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(37,1): error C2270: 'trouverIndexSaison': modifiers not allowed on nonmember functions
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(42,7): error C2143: syntax error: missing ';' before '*'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(42,7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(42,39): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(43,1): error C2270: 'getSaison': modifiers not allowed on nonmember functions
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(43,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(43,1): error C2059: syntax error: '{'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(43,1): error C2143: syntax error: missing ';' before '{'
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(43,1): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(48,41): error C2653: 'GestionnaireSaisons': is not a class or namespace name
-C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(49,1): error C2270: 'getNbSaisons': modifiers not allowed on nonmember functions
+C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Saison.h(12,54): warning C4245: 'initializing': conversion from 'int' to 'const size_t', signed/unsigned mismatch
+C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\GestionnaireSaisons.h(10,53): warning C4245: 'initializing': conversion from 'int' to 'const size_t', signed/unsigned mismatch
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\memory(2055,35): error C2664: 'Saison::Saison(const Saison &)': cannot convert argument 1 from 'std::unique_ptr<Saison,std::default_delete<Saison>>' to 'const Saison &'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\memory(2054,59): message : Reason: cannot convert from 'std::unique_ptr<Saison,std::default_delete<Saison>>' to 'const Saison'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\memory(2055,56): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Saison.h(26,5): message : see declaration of 'Saison::Saison'
+C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\src\GestionnaireSaisons.cpp(20): message : see reference to function template instantiation 'std::unique_ptr<Saison,std::default_delete<Saison>> std::make_unique<Saison,std::unique_ptr<Saison,std::default_delete<Saison>>&,0>(std::unique_ptr<Saison,std::default_delete<Saison>> &)' being compiled
   Librairie.cpp
 C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Librairie.h(10,51): warning C4245: 'initializing': conversion from 'int' to 'const size_t', signed/unsigned mismatch
 C:\Users\grego\Documents\Université\Session 8\Programmation Orientée Objet\TP3\INF1010-TP3\TP1-H20-Windows\TP1-H20\include\Librairie.h(17,43): error C2065: 'Media': undeclared identifier

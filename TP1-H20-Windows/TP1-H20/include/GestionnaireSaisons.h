@@ -2,6 +2,7 @@
 #define GESTIONNAIRESAISONS_H
 
 // To do
+#include "Saison.h"
 
 class GestionnaireSaisons
 {

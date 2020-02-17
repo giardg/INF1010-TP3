@@ -4,6 +4,9 @@
 // To do
 Auteur::Auteur()
 // To do
+    : nom_("")
+    , anneeDeNaissance_(0)
+    , nbMedias_(0)
 {
 }
 
@@ -68,4 +71,6 @@ std::ostream& operator<<(std::ostream& os, const Auteur& auteur)
 std::istream& operator>>(std::istream& is, Auteur& auteur)
 {
     // To do
+    is >> std::quoted(auteur.nom_) >> auteur.anneeDeNaissance_;
+    return is;
 }

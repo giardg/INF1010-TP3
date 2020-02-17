@@ -40,8 +40,8 @@ Saison::~Saison()
 Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
 {
     // To do
-    int indexEpisode = trouverIndexEpisode(episode->getNumEpisode);
-    if (indexEpisode != -1)
+    size_t indexEpisode = trouverIndexEpisode(episode->getNumEpisode);
+    if (indexEpisode != EPISODE_INEXSISTANTE)
     {
         episodes_[indexEpisode] = std::move(episodes_[episodes_.size() - 1]);
         episodes_.pop_back();
@@ -55,8 +55,8 @@ Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
 Saison& Saison::operator-=(unsigned int numEpisode)
 {
     // To do
-    int indexEpisode = trouverIndexEpisode(numEpisode);
-    if (indexEpisode != -1)
+    size_t indexEpisode = trouverIndexEpisode(numEpisode);
+    if (indexEpisode != EPISODE_INEXSISTANTE)
     {
         episodes_[indexEpisode] = std::move(episodes_[episodes_.size() - 1]);
         episodes_.pop_back();
@@ -123,12 +123,12 @@ size_t Saison::getNbEpisodes() const
 size_t Saison::trouverIndexEpisode(unsigned int numEpisode)
 {
     // To do
-    for (int i = 0; i < episodes_.size(); i++)
+    for (size_t i = 0; i < episodes_.size(); i++)
     {
         if (episodes_[i]->getNumEpisode == numEpisode)
         {
             return i;
         }
     }
-    return -1;
+    return EPISODE_INEXSISTANTE;
 }
