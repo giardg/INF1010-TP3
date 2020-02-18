@@ -7,13 +7,11 @@
 #include <Film.h>
 #include <Serie.h>
 #include <GestionnaireAuteurs.h>
-#include <Saison.h>
-#include <Episode.h>
 
 class Librairie
 {
 public:
-    static constexpr size_t MEDIA_INEXSISTANT = -1;
+    static constexpr int MEDIA_INEXSISTANT = -1;
 
     Librairie() = default;
     Librairie(const Librairie&);
@@ -47,7 +45,7 @@ public:
 
 protected:
     // Attributes
-    size_t trouverIndexMedia(const std::string& nomSerie) const;
+    int trouverIndexMedia(const std::string& nomSerie) const;
     Media* chercherMedia(const std::string& nomMedia, Media::TypeMedia typeMedia);
 
     bool lireLigneRestrictions(const std::string& ligne);

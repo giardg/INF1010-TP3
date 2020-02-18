@@ -9,7 +9,7 @@
 class Saison
 {
 public:
-    static constexpr size_t EPISODE_INEXSISTANTE = -1;
+    static constexpr int EPISODE_INEXSISTANTE = -1;
 
     class SortByNumSaison
     {
@@ -29,14 +29,15 @@ public:
     Saison& operator+=(std::unique_ptr<Episode> episode);
     Saison& operator-=(unsigned int numEpisode);
     bool operator==(unsigned int numSaison);
-    friend std::ostream& operator<<(std::ostream& os, const Saison& Saison);
+    friend bool operator==(unsigned int numSaison, const Saison& saison);
+    friend std::ostream& operator<<(std::ostream& os, const Saison& saison);
     friend std::istream& operator>>(std::istream& is, Saison& saison);
 
     unsigned int getNumSaison() const;
     size_t getNbEpisodes() const;
 
 private:
-    size_t trouverIndexEpisode(unsigned int numEpisode);
+    int trouverIndexEpisode(unsigned int numEpisode);
 
     // Attributs
     std::vector<std::unique_ptr<Episode>> episodes_;

@@ -1,6 +1,6 @@
 // To do
 #include "Film.h"
-#include "Media.cpp"
+//#include "Media.cpp"
 
 // To do
 Film::Film(Auteur* auteur)
@@ -23,16 +23,8 @@ Film::Film(const std::string& nom, unsigned int anneeDeSortie, Genre genre, Pays
 std::ostream& Film::afficher(std::ostream& os) const
 {
     // To do
-    os << nom_ << "\n\tDate de sortie: " << anneeDeSortie_
-       << "\n\tGenre: " << getGenreString(genre_) << "\n\tAuteur: " << auteur_->getNom()
-       << "\n\tPays: " << getPaysString(pays_)
-       << (paysRestreints_.size() == 0 ? "\n\tAucun pays restreint." : "\n\tPays restreints:");
-
-    for (std::size_t i = 0; i < paysRestreints_.size(); i++)
-    {
-        os << "\n\t\t" << getPaysString(paysRestreints_[i]);
-    }
-    os << "\nDuree: " << duree_;
+    Media::afficher(os);
+    os << "\tDuree: " << duree_;
     return os;
 }
 

@@ -69,6 +69,7 @@ Media::Media(const std::string& nom, unsigned int anneeDeSortie, Genre genre, Pa
 Media::Media(const Media& serie)
 {
     // To do
+    paysRestreints_.clear();
     for (unsigned int i = 0; i < serie.paysRestreints_.size(); i++)
     {
         paysRestreints_.push_back(serie.paysRestreints_[i]);
@@ -87,6 +88,7 @@ Media::~Media()
 {
     // To do
     paysRestreints_.clear();
+    auteur_->setNbMedias(auteur_->getNbMedias() - 1);
 }
 
 // To do
@@ -176,18 +178,19 @@ std::istream& Media::lire(std::istream& is)
     // To do
     int genreValeurEnum;
     int paysValeurEnum;
-    //int mediaValeurEnum;
-    //std::string nomAuteur;
+    // int mediaValeurEnum;
+    // std::string nomAuteur;
 
-    //is >> mediaValeurEnum >> std::quoted(nomAuteur) >> std::quoted(nom_) >> anneeDeSortie_ >>
+    // is >> mediaValeurEnum >> std::quoted(nomAuteur) >> std::quoted(nom_) >> anneeDeSortie_ >>
     //    genreValeurEnum >> paysValeurEnum >> estRestreintParAge_;
-    is >> std::quoted(nom_) >> anneeDeSortie_ >>
-            genreValeurEnum >> paysValeurEnum >> estRestreintParAge_;
-    //*auteur_ = Auteur(nomAuteur, ,); //JE NE SAIS PAS COMMENT SAVOIR L'ANNEE DE NAISSANCE DE AUTEUR
-    *auteur_ = Auteur();
+    is >> std::quoted(nom_) >> anneeDeSortie_ >> genreValeurEnum >> paysValeurEnum >>
+        estRestreintParAge_;
+    //*auteur_ = Auteur(nomAuteur, ,); //JE NE SAIS PAS COMMENT SAVOIR L'ANNEE DE NAISSANCE DE
+    // AUTEUR
+    //*auteur_ = Auteur();
     genre_ = to_enum<Media::Genre>(genreValeurEnum);
     pays_ = to_enum<Pays>(paysValeurEnum);
-    //typeMedia_ = to_enum<Media::TypeMedia>(mediaValeurEnum);
+    // typeMedia_ = to_enum<Media::TypeMedia>(mediaValeurEnum);
     return is;
 }
 
@@ -203,5 +206,6 @@ std::istream& operator>>(std::istream& is, Media& media)
 std::unique_ptr<Media> Media::clone() const
 {
     // To do
+
     return std::make_unique<Media>(*this);
 }

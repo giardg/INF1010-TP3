@@ -18,6 +18,7 @@ public:
     void setNbMedias(unsigned int nbFilms);
 
     bool operator==(const std::string& nom) const;
+    friend bool operator==(const std::string& nom, const Auteur& auteur);
     friend std::ostream& operator<<(std::ostream& os, const Auteur& auteur);
     friend std::istream& operator>>(std::istream& is, Auteur& auteur);
 

@@ -56,6 +56,12 @@ bool Auteur::operator==(const std::string& nom) const
     return (nom_ == nom);
 }
 
+
+bool operator==(const std::string& nom, const Auteur& auteur)
+{
+    return nom == auteur.nom_;
+}
+
 //! operateur qui affiche un auteur
 //! \param os Le stream dans lequel afficher
 //! \param auteur l'auteur a afficher

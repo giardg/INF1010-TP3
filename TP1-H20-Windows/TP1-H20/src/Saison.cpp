@@ -21,9 +21,11 @@ Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax)
 Saison::Saison(const Saison& saison)
 {
     // To do
+    episodes_.clear();
     for (unsigned int i = 0; i < saison.episodes_.size(); i++)
     {
-        episodes_.push_back(std::make_unique<Episode>(*saison.episodes_[i]));
+        auto episode_ptr = std::make_unique<Episode>(*(saison.episodes_[i]));
+        episodes_.push_back(std::move(episode_ptr));
     }
     numSaison_ = saison.numSaison_;
     nbEpisodesmax_ = saison.nbEpisodesmax_;
@@ -40,13 +42,13 @@ Saison::~Saison()
 Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
 {
     // To do
-    size_t indexEpisode = trouverIndexEpisode(episode->getNumEpisode);
+    int indexEpisode = trouverIndexEpisode(episode->getNumEpisode());
     if (indexEpisode != EPISODE_INEXSISTANTE)
     {
         episodes_[indexEpisode] = std::move(episodes_[episodes_.size() - 1]);
         episodes_.pop_back();
     }
-    episodes_.push_back(std::make_unique<Episode>(episode));
+    episodes_.push_back(std::move(episode));
     sort(episodes_.begin(), episodes_.end(), Episode::SortByNumEpisode());
     return *this;
 }
@@ -55,7 +57,7 @@ Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
 Saison& Saison::operator-=(unsigned int numEpisode)
 {
     // To do
-    size_t indexEpisode = trouverIndexEpisode(numEpisode);
+    int indexEpisode = trouverIndexEpisode(numEpisode);
     if (indexEpisode != EPISODE_INEXSISTANTE)
     {
         episodes_[indexEpisode] = std::move(episodes_[episodes_.size() - 1]);
@@ -75,11 +77,21 @@ bool Saison::operator==(unsigned int numSaison)
     return false;
 }
 
+bool operator==(unsigned int numSaison, const Saison& saison)
+{
+    if (saison.numSaison_ == numSaison)
+    {
+        return true;
+    }
+    return false;
+}
+
 // To do
 std::ostream& operator<<(std::ostream& os, const Saison& saison)
 {
     // To do
     std::string etatSaison;
+    std::string saison_str;
     if (saison.episodes_.size() == saison.nbEpisodesmax_)
     {
         etatSaison = "(Terminer)";
@@ -88,11 +100,19 @@ std::ostream& operator<<(std::ostream& os, const Saison& saison)
     {
         etatSaison = "(Encour)";
     }
-    os << "Saison " << saison.numSaison_ << ": " << saison.episodes_.size() << "/"
-       << saison.nbEpisodesmax_ << etatSaison << std::endl;
-    for (int i = 0; i < saison.episodes_.size() - 1; i++)
+    if (saison.numSaison_ < 10)
     {
-        os << *(saison.episodes_[i]) << std::endl;
+        saison_str = "Saison0";
+    }
+    else
+    {
+        saison_str = "Saison";
+    }
+    os << saison_str << saison.numSaison_ << ":" << saison.episodes_.size() << "/"
+       << saison.nbEpisodesmax_ << etatSaison << std::endl;
+    for (int i = 0; i < saison.episodes_.size(); i++)
+    {
+        os << "\t\t" << *(saison.episodes_[i]) << std::endl;
     }
 
     return os;
@@ -120,12 +140,12 @@ size_t Saison::getNbEpisodes() const
 }
 
 // To do
-size_t Saison::trouverIndexEpisode(unsigned int numEpisode)
+int Saison::trouverIndexEpisode(unsigned int numEpisode)
 {
     // To do
-    for (size_t i = 0; i < episodes_.size(); i++)
+    for (int i = 0; i < episodes_.size(); i++)
     {
-        if (episodes_[i]->getNumEpisode == numEpisode)
+        if (episodes_[i]->getNumEpisode() == numEpisode)
         {
             return i;
         }

@@ -2,7 +2,7 @@
 #define FILM_H
 
 // To do
-#include "Auteur.h"
+//#include "Auteur.h"
 #include "Media.h"
 
 class Film : public Media

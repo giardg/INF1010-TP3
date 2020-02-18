@@ -21,6 +21,7 @@ public:
     Episode(unsigned int numEpisode, const std::string& nom, const std::string& duree);
 
     bool operator==(unsigned int numEpisode);
+    friend bool operator==(unsigned int numEpisode, const Episode& episode);
     friend std::ostream& operator<<(std::ostream& os, const Episode& episode);
     friend std::istream& operator>>(std::istream& is, Episode& episode);
 

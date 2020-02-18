@@ -2,8 +2,8 @@
 //! \author Saad Belgana
 //! \date 30 janvier 2020
 
-//#include "Librairie.h"
-//#include "Utilisateur.h"
+#include "Librairie.h"
+#include "Utilisateur.h"
 #include "debogageMemoire.h"
 #include <string> //?
 #include <vector> //?
@@ -23,12 +23,12 @@ int main()
     // Ici, les constructeurs des objets se font appeler.
     // Vous devez au moins faire le squelette de leurs défintions
     // pour que le programme compile.
-    //GestionnaireAuteurs gestionnaireAuteurs;
-    //Librairie librairie;
+    GestionnaireAuteurs gestionnaireAuteurs;
+    Librairie librairie;
 
     std::vector<bool> tests;
 
-#if false
+#if true
     // Test 1: classe Episode
     Episode episode_01;
     std::string episodeLigne = "1\"Episode:01\"\"00:00:00\"";
@@ -53,7 +53,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 2: classe Saison
     Saison saison_01;
     std::string saisonLigne = "1 20";
@@ -92,7 +92,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
 
     // test 3 classe Auteur
     std::stringstream auteurStream_01;
@@ -119,7 +119,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 4: classe Film / Media
 
     Film film_01(&auteur_01);
@@ -148,7 +148,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 5: classe Serie / Media / GestionnaireSaison
     Serie serie_01(&auteur_01);
 
@@ -324,7 +324,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 8: operateur d'ajout d'auteurs
     bool test3Reussi = true;
     // Remplir le tableau des auteurs
@@ -361,7 +361,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 10: Ajouter des films
     size_t nbFilmsAvantTest10 = librairie.getNbMedias();
     static constexpr unsigned int test10NbFilmsAjouter = 200;
@@ -390,7 +390,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 11: Supprimer des films
     // On supprime tous les films ajoutés au test 8
     size_t nbFilmsAvantTest11 = librairie.getNbMedias();
@@ -418,7 +418,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 13: Ajouter des Series
     size_t nbFilmsAvantTest13 = librairie.getNbMedias();
     static constexpr unsigned int test13NbSeriesAjouter = 200;
@@ -445,7 +445,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 14: Supprimer des Series
     // On supprime toutes les Series ajoutés au test 14
     size_t nbFilmsAvantTest14 = librairie.getNbMedias();
@@ -504,7 +504,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 17: Utilisateur non premium limite de films
     Auteur auteur("Test", 23);
     Film film("film1", 1990, Film::Genre::Comedie, Pays::Mexique, false, &auteur, "20:00");
@@ -541,7 +541,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
 
     // test 20 constructeur de copie de librairie et operateur=
     librairie += std::make_unique<Film>("tes2t",

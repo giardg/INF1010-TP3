@@ -7,7 +7,7 @@
 class GestionnaireSaisons
 {
 public:
-    static constexpr size_t SAISON_INEXSISTANTE = -1;
+    static constexpr int SAISON_INEXSISTANTE = -1;
 
     GestionnaireSaisons() = default;
     ~GestionnaireSaisons();
@@ -24,7 +24,7 @@ public:
     size_t getNbSaisons() const;
 
 protected:
-    size_t trouverIndexSaison(const unsigned int numSaison) const;
+    int trouverIndexSaison(const unsigned int numSaison) const;
 
     // Attribute
     std::vector<std::unique_ptr<Saison>> saisons_;

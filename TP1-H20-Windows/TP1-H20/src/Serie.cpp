@@ -21,20 +21,26 @@ Serie::Serie(const std::string& nom, unsigned int anneeDeSortie, Genre genre, Pa
 // To do
 Serie::Serie(const Serie& serie)
     // To do
-    : Media(serie.nom_, serie.anneeDeSortie_, serie.genre_, serie.pays_, serie.estRestreintParAge_,
-            serie.auteur_, TypeMedia::Serie)
+    : Media(serie)
     , GestionnaireSaisons()
 {
     // To do (Je ne suis pas sûr s'il faut faire quelque chose de plus)
+    saisons_.clear();
+    for (unsigned int i = 0; i < serie.saisons_.size(); i++)
+    {
+        auto saison_ptr = std::make_unique<Saison>(*(serie.saisons_[i]));
+        saisons_.push_back(std::move(saison_ptr));
+    }
 }
 
 // To do
 std::ostream& Serie::afficher(std::ostream& os) const
 {
     // To do
+    Media::afficher(os);
     for (int i = 0; i < saisons_.size(); i++)
     {
-        os << saisons_[i];
+        os << "\t" << *saisons_[i];
     }
     return os;
 }

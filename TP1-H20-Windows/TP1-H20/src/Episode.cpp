@@ -30,12 +30,29 @@ bool Episode::operator==(unsigned int numEpisode)
     return false;
 }
 
+bool operator==(unsigned int numEpisode, const Episode& episode)
+{
+    if (episode.numEpisode_ == numEpisode)
+    {
+        return true;
+    }
+    return false;
+}
+
 // To do
 std::ostream& operator<<(std::ostream& os, const Episode& episode)
 {
     // To do
-    os << "Episode " << episode.numEpisode_ << ": " << episode.nom_
-           << " | Duree: " << episode.duree_;
+    std::string episode_str;
+    if (episode.numEpisode_ < 10)
+    {
+        episode_str = "Episode0";
+    }
+    else
+    {
+        episode_str = "Episode";
+    }
+    os << episode_str << episode.numEpisode_ << ":" << episode.nom_ << "|Duree: " << episode.duree_;
 
     return os;
 }
