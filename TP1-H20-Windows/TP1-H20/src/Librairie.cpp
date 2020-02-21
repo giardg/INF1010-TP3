@@ -46,8 +46,7 @@ Film* Librairie::chercherFilm(const std::string& nomFilm)
 Serie* Librairie::chercherSerie(const std::string& nomSerie)
 {
     // To do
-    Media* media = chercherMedia(nomSerie, Media::TypeMedia::Serie);
-    return dynamic_cast<Serie*>(media);
+    return dynamic_cast<Serie*>(chercherMedia(nomSerie, Media::TypeMedia::Serie));
 }
 
 // To do
@@ -206,6 +205,7 @@ Librairie& Librairie::operator+=(std::unique_ptr<Media> media)
         return *this;
     }
     medias_.push_back(std::move(media));
+    sort(medias_.begin(), medias_.end(), Media::SortByTypeMedia());
     return *this;
 }
 
@@ -229,7 +229,7 @@ Media* Librairie::chercherMedia(const std::string& nomMedia, Media::TypeMedia ty
 {
     // To do
     int indexMedia = trouverIndexMedia(nomMedia);
-    if ((indexMedia == MEDIA_INEXSISTANT) & (medias_[indexMedia]->getTypeMedia() != typeMedia))
+    if ((indexMedia == MEDIA_INEXSISTANT) || (medias_[indexMedia]->getTypeMedia() != typeMedia))
     {
         return nullptr;
     }
@@ -332,7 +332,8 @@ bool Librairie::lireLigneSerie(std::istream& is, GestionnaireAuteurs& gestionnai
             return false;
         }
         Serie serie = Serie(auteur);
-        if (is >> serie)
+        // if (is >> serie)
+        if (serie.lire(is))
         {
             auteur->setNbMedias(auteur->getNbMedias() + 1);
             *this += std::make_unique<Serie>(serie);
@@ -348,7 +349,7 @@ bool Librairie::lireLigneFilm(std::istream& is, GestionnaireAuteurs& gestionnair
 {
     // To do
     std::string nomAuteur;
-    if (is >> nomAuteur)
+    if (is >> std::quoted(nomAuteur))
     {
         Auteur* auteur = gestionnaireAuteurs.chercherAuteur(nomAuteur);
         if (auteur == nullptr)
@@ -357,7 +358,8 @@ bool Librairie::lireLigneFilm(std::istream& is, GestionnaireAuteurs& gestionnair
             return false;
         }
         Film film = Film(auteur);
-        if (is >> film)
+        // if (is >> film)
+        if (film.lire(is))
         {
             auteur->setNbMedias(auteur->getNbMedias() + 1);
             *this += std::make_unique<Film>(film);
@@ -401,17 +403,16 @@ size_t Librairie::getNbSeries() const
 }
 
 // To do
-size_t Librairie::getNbSaisons(const std::string& nomSerie) const
+size_t Librairie::getNbSaisons(const std::string& nomSerie) //const??
 {
     // To do
-    Librairie lib = Librairie(*this);
-    return lib.chercherSerie(nomSerie)->getNbSaisons();
+
+    return chercherSerie(nomSerie)->getNbSaisons();
 }
 
 // To do
-size_t Librairie::getNbEpisodes(const std::string& nomSerie, const unsigned int numSaison) const
+size_t Librairie::getNbEpisodes(const std::string& nomSerie, const unsigned int numSaison) //const??
 {
     // To do
-    Librairie lib = Librairie(*this);
-    return lib.chercherSerie(nomSerie)->getSaison(numSaison)->getNbEpisodes();
+    return chercherSerie(nomSerie)->getSaison(numSaison)->getNbEpisodes();
 }

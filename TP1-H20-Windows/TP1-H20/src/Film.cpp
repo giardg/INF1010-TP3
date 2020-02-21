@@ -8,6 +8,7 @@ Film::Film(Auteur* auteur)
     : Media(auteur, TypeMedia::Film)
     , duree_("")
 {
+    auteur->setNbMedias(auteur->getNbMedias() + 1);
 }
 
 // To do

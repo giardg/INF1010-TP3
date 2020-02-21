@@ -7,6 +7,7 @@ Serie::Serie(Auteur* auteur)
     : Media(auteur, TypeMedia::Serie)
     , GestionnaireSaisons() // Pas sûr du constructeur de GestionnaireSaisons
 {
+    auteur->setNbMedias(auteur->getNbMedias() + 1);
 }
 
 // To do

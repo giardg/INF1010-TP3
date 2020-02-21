@@ -87,7 +87,7 @@ Media::Media(const Media& serie)
 Media::~Media()
 {
     // To do
-    paysRestreints_.clear();
+    //paysRestreints_.clear();
     auteur_->setNbMedias(auteur_->getNbMedias() - 1);
 }
 

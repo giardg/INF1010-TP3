@@ -39,8 +39,8 @@ public:
     size_t getNbMedias() const;
     size_t getNbFilms() const;
     size_t getNbSeries() const;
-    size_t getNbSaisons(const std::string& nomSerie) const;
-    size_t getNbEpisodes(const std::string& nomSerie, unsigned int numSaison) const;
+    size_t getNbSaisons(const std::string& nomSerie); //const??
+    size_t getNbEpisodes(const std::string& nomSerie, unsigned int numSaison);  //const??
     const std::vector<std::unique_ptr<Media>>& getMedias() const;
 
 protected:

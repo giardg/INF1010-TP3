@@ -204,7 +204,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 6 et 7: Lecture des fichiers et affichage.
     // Assurez-vous de mettre les fichiers à la bonne place pour que
     // le programme puisse les trouver.
@@ -349,7 +349,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 9: Fonction recherche d'auteurs
     const Auteur* auteurTest = gestionnaireAuteurs.chercherAuteur("George Lucas");
     const Auteur* auteurInexsistant = gestionnaireAuteurs.chercherAuteur("qwerty");
@@ -407,7 +407,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 12: Recherche film
     Film* raidersOfTheLostArk = (librairie.chercherFilm("Raiders of the Lost Ark"));
     tests.push_back(raidersOfTheLostArk != nullptr &&
@@ -462,7 +462,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 15: Recherche Serie
     Serie* gameofThrones = (librairie.chercherSerie("Game of Thrones"));
     tests.push_back(gameofThrones != nullptr && gameofThrones->getGenre() == Serie::Genre::Action &&
@@ -472,7 +472,7 @@ int main()
     tests.push_back(false);
 #endif
 
-#if false
+#if true
     // Test 16: Ajouter/retiser Episode/Saison
     bool test_1 = librairie.getNbSaisons("Game of Thrones") == 2;
     librairie.ajouterSaison("Game of Thrones", std::make_unique<Saison>(3, 20));

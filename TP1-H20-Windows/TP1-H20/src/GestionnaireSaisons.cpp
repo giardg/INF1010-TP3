@@ -3,7 +3,7 @@
 
 // To do
 GestionnaireSaisons::~GestionnaireSaisons()
-{ 
+{
     // To do
     saisons_.clear();
 }
@@ -79,6 +79,10 @@ Saison* GestionnaireSaisons::getSaison(const unsigned int numSaison) const
 {
     // To do
     int indexSaison = trouverIndexSaison(numSaison);
+    if (indexSaison == SAISON_INEXSISTANTE)
+    {
+        return nullptr;
+    }
     return saisons_[indexSaison].get();
 }
 
