@@ -1,17 +1,20 @@
-// To do
+/*******************************************************
+ * Titre: Travail pratique #3 - GestionnaireSaisons.cpp
+ * Date: 1 mars 2020
+ * Auteurs: Gamache Olivier, Giard Gregory
+ ******************************************************/
+
 #include "GestionnaireSaisons.h"
 
-// To do
+// Destructeur 
 GestionnaireSaisons::~GestionnaireSaisons()
 {
-    // To do
     saisons_.clear();
 }
 
-// To do
+// Surcharge de l'opérateur += qui ajoute une saison au vecteur saisons_
 GestionnaireSaisons& GestionnaireSaisons::operator+=(std::unique_ptr<Saison> saison)
 {
-    // To do
     int indexSaison = trouverIndexSaison(saison->getNumSaison());
     if (indexSaison != SAISON_INEXSISTANTE)
     {
@@ -23,10 +26,9 @@ GestionnaireSaisons& GestionnaireSaisons::operator+=(std::unique_ptr<Saison> sai
     return *this;
 }
 
-// To do
+// Surcharge de l'opérateur -= qui retire une saison du vecteur saisons_
 GestionnaireSaisons& GestionnaireSaisons::operator-=(const unsigned int numSaison)
 {
-    // To do
     int indexSaison = trouverIndexSaison(numSaison);
     if (indexSaison != SAISON_INEXSISTANTE)
     {
@@ -36,11 +38,11 @@ GestionnaireSaisons& GestionnaireSaisons::operator-=(const unsigned int numSaiso
     return *this;
 }
 
-// To do
+// Méthode qui ajoute un épisode à une saison
+// Elle prend en entrée le numéro de l'épisode
 void GestionnaireSaisons::ajouterEpisode(const unsigned int numSaison,
                                          std::unique_ptr<Episode> episode)
 {
-    // To do
     int indexSaison = trouverIndexSaison(numSaison);
     if (indexSaison != -1)
     {
@@ -48,11 +50,11 @@ void GestionnaireSaisons::ajouterEpisode(const unsigned int numSaison,
     }
 }
 
-// To do
+// Méthode qui retire un épisode d'une saison
+// Elle prend en entrée le numéro de l'épisode
 void GestionnaireSaisons::retirerEpisode(const unsigned int numSaison,
                                          const unsigned int numEpisode)
 {
-    // To do
     int indexSaison = trouverIndexSaison(numSaison);
     if (indexSaison != -1)
     {
@@ -60,10 +62,10 @@ void GestionnaireSaisons::retirerEpisode(const unsigned int numSaison,
     }
 }
 
-/// To do
+// Méthode qui retourne la saison qui correspond avec l'entier entré en paramètre si une saison
+// ayant le même chiffre existe
 int GestionnaireSaisons::trouverIndexSaison(const unsigned int numSaison) const
 {
-    // To do
     for (int i = 0; i < saisons_.size(); i++)
     {
         if (saisons_[i]->getNumSaison() == numSaison)
@@ -74,10 +76,9 @@ int GestionnaireSaisons::trouverIndexSaison(const unsigned int numSaison) const
     return SAISON_INEXSISTANTE;
 }
 
-// To do
+// Méthode qui retourne les informations d'une saison
 Saison* GestionnaireSaisons::getSaison(const unsigned int numSaison) const
 {
-    // To do
     int indexSaison = trouverIndexSaison(numSaison);
     if (indexSaison == SAISON_INEXSISTANTE)
     {
@@ -86,9 +87,8 @@ Saison* GestionnaireSaisons::getSaison(const unsigned int numSaison) const
     return saisons_[indexSaison].get();
 }
 
-// To do
+// Méthode qui retourne le nombre de saison
 size_t GestionnaireSaisons::getNbSaisons() const
 {
-    // To do
     return saisons_.size();
 }

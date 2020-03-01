@@ -1,31 +1,32 @@
-// To do
+/*******************************************************
+ * Titre: Travail pratique #3 - Serie.cpp
+ * Date: 1 mars 2020
+ * Auteurs: Gamache Olivier, Giard Gregory
+ ******************************************************/
+
 #include "Serie.h"
 
-// To do              Pointeur vers l'auteur du serie
+// Constructeur par paramètre
 Serie::Serie(Auteur* auteur)
-    // To do
     : Media(auteur, TypeMedia::Serie)
-    , GestionnaireSaisons() // Pas sûr du constructeur de GestionnaireSaisons
+    , GestionnaireSaisons()
 {
     auteur->setNbMedias(auteur->getNbMedias() + 1);
 }
 
-// To do
+// Constructeur par paramètres
 Serie::Serie(const std::string& nom, unsigned int anneeDeSortie, Genre genre, Pays pays,
              bool estRestreintParAge, Auteur* auteur)
-    // To do
     : Media(nom, anneeDeSortie, genre, pays, estRestreintParAge, auteur, TypeMedia::Serie)
     , GestionnaireSaisons()
 {
 }
 
-// To do
+// Constructeur par copie
 Serie::Serie(const Serie& serie)
-    // To do
     : Media(serie)
     , GestionnaireSaisons()
 {
-    // To do (Je ne suis pas sûr s'il faut faire quelque chose de plus)
     saisons_.clear();
     for (unsigned int i = 0; i < serie.saisons_.size(); i++)
     {
@@ -34,10 +35,9 @@ Serie::Serie(const Serie& serie)
     }
 }
 
-// To do
+// Méthode qui permet d'afficher les attributs de la classe serie
 std::ostream& Serie::afficher(std::ostream& os) const
 {
-    // To do
     Media::afficher(os);
     for (int i = 0; i < saisons_.size(); i++)
     {
@@ -46,9 +46,8 @@ std::ostream& Serie::afficher(std::ostream& os) const
     return os;
 }
 
-// To do
+// Méthode qui crée une copie de l'objet courant
 std::unique_ptr<Media> Serie::clone() const
 {
-    // To do
-    return std::make_unique<Media>(*this); // Dans le .h, objet de type Media et non pas Serie...
+    return std::make_unique<Media>(*this);
 }

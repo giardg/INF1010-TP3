@@ -5,11 +5,11 @@
 #include "Librairie.h"
 #include "Utilisateur.h"
 #include "debogageMemoire.h"
-#include <string> //?
-#include <vector> //?
-#include <sstream> //?
-#include <iostream> //?
-#include <iomanip> //?
+#include <string> 
+#include <vector> 
+#include <sstream> 
+#include <iostream> 
+#include <iomanip> 
 
 // NOTE: Pour que le programme compile initialement, vous pouvez changer tous
 // les #if false à des #if false, et mettre en commentaire tout le code qui a été

@@ -1,9 +1,13 @@
-// To do
+/**************************************************
+ * Titre: Travail pratique #3 - Auteur.cpp
+ * Date: 1 mars 2020
+ * Auteurs: Gamache Olivier, Giard Gregory
+ **************************************************/
+
 #include "Auteur.h"
 
-// To do
+// Constructeur sans paramètre
 Auteur::Auteur()
-// To do
     : nom_("")
     , anneeDeNaissance_(0)
     , nbMedias_(0)
@@ -56,7 +60,7 @@ bool Auteur::operator==(const std::string& nom) const
     return (nom_ == nom);
 }
 
-
+// Surcharge de l'opérateur == qui compare un string avec le nom de l'auteur avec auteur
 bool operator==(const std::string& nom, const Auteur& auteur)
 {
     return nom == auteur.nom_;
@@ -73,10 +77,10 @@ std::ostream& operator<<(std::ostream& os, const Auteur& auteur)
     return os;
 }
 
-// To do
+// Surcharge de l'opérateur >> permettant de retirer de la lecture d'une ligne le nom de 
+// l'auteur ainsi que son année de naissance
 std::istream& operator>>(std::istream& is, Auteur& auteur)
 {
-    // To do
     is >> std::quoted(auteur.nom_) >> auteur.anneeDeNaissance_;
     return is;
 }

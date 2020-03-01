@@ -1,26 +1,28 @@
-// To do
+/*******************************************************
+ * Titre: Travail pratique #3 - Saison.cpp
+ * Date: 1 mars 2020
+ * Auteurs: Gamache Olivier, Giard Gregory
+ ******************************************************/
+
 #include "Saison.h"
 
-// To do
+// Constructeur sans paramètre
 Saison::Saison()
-    : // To do
-    numSaison_(0)
+    : numSaison_(0)
     , nbEpisodesmax_(0)
 {
 }
 
-// To do
+// Constructeur par paramètre
 Saison::Saison(unsigned int numSaison, unsigned int nbEpisodemax)
-    : // To do
-    numSaison_(numSaison)
+    : numSaison_(numSaison)
     , nbEpisodesmax_(nbEpisodemax)
 {
 }
 
-// To do
+// Constructeur par copie
 Saison::Saison(const Saison& saison)
 {
-    // To do
     episodes_.clear();
     for (unsigned int i = 0; i < saison.episodes_.size(); i++)
     {
@@ -31,17 +33,15 @@ Saison::Saison(const Saison& saison)
     nbEpisodesmax_ = saison.nbEpisodesmax_;
 }
 
-// To do
+// Destructeur
 Saison::~Saison()
 {
-    // To do
     episodes_.clear();
 }
 
-// To do
+// Surcahrge de l'opérateur += qui ajoute un épisode au vecteur episodes_
 Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
 {
-    // To do
     int indexEpisode = trouverIndexEpisode(episode->getNumEpisode());
     if (indexEpisode != EPISODE_INEXSISTANTE)
     {
@@ -53,10 +53,9 @@ Saison& Saison::operator+=(std::unique_ptr<Episode> episode)
     return *this;
 }
 
-// To do
+// Méthode qui retire un épisode au vecteur episodes_
 Saison& Saison::operator-=(unsigned int numEpisode)
 {
-    // To do
     int indexEpisode = trouverIndexEpisode(numEpisode);
     if (indexEpisode != EPISODE_INEXSISTANTE)
     {
@@ -66,10 +65,10 @@ Saison& Saison::operator-=(unsigned int numEpisode)
     return *this;
 }
 
-// To do
+// Surcharge de l'opérateur == qui compare le numéro en paramètre au numéro des épisodes
+// Retourne true si un épisode du même numéro existe. Sinon, retourne false
 bool Saison::operator==(unsigned int numSaison)
 {
-    // To do
     if (numSaison_ == numSaison)
     {
         return true;
@@ -77,6 +76,8 @@ bool Saison::operator==(unsigned int numSaison)
     return false;
 }
 
+// Surcharge de l'opérateur == qui compare le numéro en paramètre au numéro des épisodes
+// Retourne true si un épisode du même numéro existe. Sinon, retourne false
 bool operator==(unsigned int numSaison, const Saison& saison)
 {
     if (saison.numSaison_ == numSaison)
@@ -86,10 +87,9 @@ bool operator==(unsigned int numSaison, const Saison& saison)
     return false;
 }
 
-// To do
+// Surcharge de l'opérateur << permettant d'afficher les informations d'une saison
 std::ostream& operator<<(std::ostream& os, const Saison& saison)
 {
-    // To do
     std::string etatSaison;
     std::string saison_str;
     if (saison.episodes_.size() == saison.nbEpisodesmax_)
@@ -118,31 +118,29 @@ std::ostream& operator<<(std::ostream& os, const Saison& saison)
     return os;
 }
 
-// To do
+// Surcharge de l'opérateur >> qui pemert de lire un ligne et d'initialiser les attributs de
+// la classe saison
 std::istream& operator>>(std::istream& is, Saison& saison)
 {
-    // To do
     is >> saison.numSaison_ >> saison.nbEpisodesmax_;
     return is;
 }
 
-// To do
+// Méthode qui retourne le numéro de la saison
 unsigned int Saison::getNumSaison() const
 {
-    // To do
     return numSaison_;
 }
 
-// To do
+// Méthode qui retourne le nombre d'épisode d'une saison
 size_t Saison::getNbEpisodes() const
-{ // To do
+{ 
     return episodes_.size();
 }
 
-// To do
+// Méthode qui permet de retrouver l'épisode ayant le même numéro que celui entré en paramètre
 int Saison::trouverIndexEpisode(unsigned int numEpisode)
 {
-    // To do
     for (int i = 0; i < episodes_.size(); i++)
     {
         if (episodes_[i]->getNumEpisode() == numEpisode)

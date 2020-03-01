@@ -1,3 +1,9 @@
+/*******************************************************
+ * Titre: Travail pratique #3 - GestionnaireAuteurs.cpp
+ * Date: 1 mars 2020
+ * Auteurs: Gamache Olivier, Giard Gregory
+ ******************************************************/
+
 #include "GestionnaireAuteurs.h"
 
 //! Constructeur de la classe GestionnaireAuteurs
@@ -68,7 +74,6 @@ bool GestionnaireAuteurs::operator+=(const Auteur& auteur)
 std::ostream& operator<<(std::ostream& os, const GestionnaireAuteurs& gestionnaireAuteurs)
 {
     for (size_t i = 0; i < gestionnaireAuteurs.auteurs_.size(); i++)
-        // if(gestionnaireAuteurs.auteurs_[i] != NULL)
         os << gestionnaireAuteurs.auteurs_[i] << '\n';
 
     return os;

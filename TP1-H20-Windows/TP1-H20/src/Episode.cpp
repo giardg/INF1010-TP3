@@ -1,28 +1,33 @@
-// To do
+/**************************************************
+ * Titre: Travail pratique #3 - Episode.cpp
+ * Date: 1 mars 2020
+ * Auteurs: Gamache Olivier, Giard Gregory
+ **************************************************/
+
 #include "Episode.h"
 
-// To do
+// Constructeur sans paramètre
 Episode::Episode()
-    : // To do
+    :
     nom_("")
     , duree_("")
     , numEpisode_(0)
 {
 }
 
-// To do
+// Constructeur avec paramètres
 Episode::Episode(unsigned int numEpisode, const std::string& nom, const std::string& duree)
-    : // To do
+    :
     nom_(nom)
     , duree_(duree)
     , numEpisode_(numEpisode)
 {
 }
 
-// To do
+// Surcharge de l'opérateur == comparant un int à un numéro d'épisode
+// Return true si les numéros sont égaux. Sinon retourne false
 bool Episode::operator==(unsigned int numEpisode)
 {
-    // To do
     if (numEpisode_ == numEpisode)
     {
         return true;
@@ -30,6 +35,8 @@ bool Episode::operator==(unsigned int numEpisode)
     return false;
 }
 
+// Surcharge de l'opérateur == permettant d'effectuer la surcharge précédente
+// en inversant les positions de l'entier et de l'épisode autour de l'opérateur
 bool operator==(unsigned int numEpisode, const Episode& episode)
 {
     if (episode.numEpisode_ == numEpisode)
@@ -39,11 +46,11 @@ bool operator==(unsigned int numEpisode, const Episode& episode)
     return false;
 }
 
-// To do
+// Surcharge de l'opérateur << permettant d'afficher tous les attributs de l'épisode
 std::ostream& operator<<(std::ostream& os, const Episode& episode)
 {
-    // To do
     std::string episode_str;
+    // Condition pour uniformiser l'affichage
     if (episode.numEpisode_ < 10)
     {
         episode_str = "Episode0";
@@ -57,17 +64,16 @@ std::ostream& operator<<(std::ostream& os, const Episode& episode)
     return os;
 }
 
-// To do
+// Surcharge de l'opérateur >> permettant de lire une ligne et d'en tirer le numéro de l'épisode,
+// le nom de l'épisode ainsi que la durée de celui-ci
 std::istream& operator>>(std::istream& is, Episode& episode)
 {
-    // To do
     is >> episode.numEpisode_ >> std::quoted(episode.nom_) >> std::quoted(episode.duree_);
     return is;
 }
 
-// To do
+// Méthode qui retourne le nombre d'épisode
 unsigned int Episode::getNumEpisode() const
 {
-    // To do
     return numEpisode_;
 }
